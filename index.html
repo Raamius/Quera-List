@@ -32,7 +32,7 @@
         </div>
         <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
         <nav id="mobileMenu"
-            class="fixed top-0 right-0 z-50 h-full w-64 bg-white transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+            class="fixed top-0 right-0 z-50 h-screen w-64 bg-white transform translate-x-full transition-transform duration-300 ease-in-out md:hidden overflow-auto">
             <div class="flex justify-between py-6 m-4">
                 <span class="font-semibold">کوئرا لیست</span>
                 <button id="closeMenu" class="focus:outline-none"><img src="./assets/icons/close.svg"
@@ -68,61 +68,76 @@
                     <a href="#">پروفایل</a>
                 </li>
             </ul>
-
-            <div class="flex items-center m-2">
+            <!--
+            <div class="flex items-center justify-evenly mx-2 my-6">
                 <div class="flex items-center cursor-pointer">
-                  <label for="darkModeToggle" class="flex items-center">
-                      <div class="light-icon">
-                        <img src="./assets/icons/sun.svg" alt="Light mode icon" class="w-6 h-6">
-                      </div>
-                    <span class="mx-2 text-sm">روشن</span>
-                  </label>
+                    <label for="darkModeToggle" class="flex items-center">
+                        <div class="light-icon">
+                            <img src="./assets/icons/sun.svg" alt="Light mode" class="w-6 h-6">
+                        </div>
+                        <span class="mx-2 text-sm">روشن</span>
+                    </label>
                 </div>
-
                 <div class="flex items-center cursor-pointer">
-                  <input type="checkbox" id="darkModeToggle" class="hidden">
-                  <label for="darkModeToggle" class="flex items-center">
-                    <div class="dark-icon">
-                      <img src="./assets/icons/moon.svg" alt="Dark mode icon" class="w-6 h-6">
-                    </div>
-                    <span class="mx-2 text-sm">تاریک</span>
-                  </label>
+                    <input type="checkbox" id="darkModeToggle" class="hidden">
+                    <label for="darkModeToggle" class="flex items-center">
+                        <div class="dark-icon">
+                            <img src="./assets/icons/moon.svg" alt="Dark mode" class="w-6 h-6">
+                        </div>
+                        <span class="mx-2 text-sm">تاریک</span>
+                    </label>
                 </div>
-              </div>
-
-              <div class="border-t-2 border-gray-200 my-4 mx-10 md:hidden"></div>
-
+            </div>
+            -->
+            <div class="border-t-2 border-gray-200 m-4"></div>
+            <div class="flex items-start gap-4 h-10 p-4 m-14">
+                <img src="./assets/icons/logout.svg" alt="">
+                <a href="#">خروج</a>
+            </div>
         </nav>
-
-
-          
     </header>
     <div class="flex flex-row gap-4 items-center m-10 md:hidden">
         <div>
             <img src="./assets/pics/pfp1.png" alt="Profile Picture" class="w-16 h-16 rounded-full">
         </div>
         <div class="flex flex-col">
-            <span id="username" class="text-2xl font-bold">سلام</span>
-            <span id="todaysDate" class="font-medium text-slate-500">امروز</span>
+            <span id="usernameMobile" class="text-2xl font-bold"></span>
+            <span id="todaysDateMobile" class="font-medium text-slate-500"></span>
         </div>
     </div>
     <div class="border-t-2 border-gray-200 my-4 mx-10 md:hidden"></div>
+
+
     <div id="mainpart" class="flex flex-col gap-12 m-6 md:my-14">
         <div class="flex flex-col gap-4">
             <span class="text-2xl font-bold">تسک‌های امروز</span>
-            <span id="todoCount" class="text-sm font-normal text-slate-500">3 تسک را باید انجام دهید.</span>
+            <span id="todoCount" class="text-sm font-normal text-slate-500">تسکی برای امروز نداری!</span>
         </div>
-        <div id="todo">
-
+        <div id="newtodo" class="outline-4 outline-dashed outline-[#CCC] rounded-3xl">
+            <div class="flex flex-row items-center gap-4 mx-6 p-4">
+                <img src="./assets/icons/add.svg" alt="add">
+                <span class="text-[#007BFF]">افزودن وظیفه جدید</span>
+            </div>
         </div>
+        <div class="flex flex-col gap-12 justify-center items-center opacity-65">
+            <div>
+                <img src="./assets/pics/empty.png" alt="image">
+            </div>
+            <div class="flex flex-col items-center gap-2">
+                <p class="text-[#7D7D7F] font-bold">چه کارهایی امروز برای انجام داری؟</p>
+                <p class="text-sm text-center text-[#AFAEB2]">میتونی الان تسک‌هاتو اینجا بنویسی و برنامه ریزی رو شروع
+                    کنی!</p>
+            </div>
+        </div>
+        <div id="todo"></div>
         <div class="flex flex-col gap-4">
             <span class="text-2xl font-bold">تسک‌های انجام‌شده</span>
-            <span id="doneCount" class="text-sm font-normal text-slate-500">3 تسک را انجام داده‌اید.</span>
+            <span id="doneCount" class="text-sm font-normal text-slate-500">تسک انجام‌شده‌ای وجود ندارد.</span>
         </div>
-        <div class="done">
-
-        </div>
+        <div id="done"></div>
     </div>
+
+
     <script src="main.js"></script>
 </body>
 
