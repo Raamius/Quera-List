@@ -1,8 +1,10 @@
-tailwind.config = {
-    theme: {
-        extend: {
-            colors: {
-            }
-        }
-    }
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./**/*.{html,js}"],
+  darkMode: 'class',
+  theme: {
+    extend: {},
+  },
+  plugins: [],
 }
+

@@ -1,12 +1,129 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quera List</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="./src/output.css" rel="stylesheet">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <style>
+        @font-face {
+            font-family: "yekan";
+            src: url(./assets/fonts/YekanBakh-VF.ttf) format('truetype');
+        }
+
+        ;
+
+        * {
+            font-family: 'yekan';
+        }
+
+        ;
+    </style>
 </head>
-<body>
-    
+
+<body class="bg-[#EEE] font-['yekan'] w-full md:w-1/2 mx-auto">
+    <header class="sticky top-0 z-10 md:hidden">
+        <div class=" flex items-center justify-between content-center p-2 m-6 bg-white border border-none rounded-xl">
+            <button id="hamburger" class="text-3xl mx-3 hover:text-zinc-500">&#9776;</button>
+            <span class="font-semibold">کوئرا لیست</span>
+            <button class="text-3xl mx-3 invisible">&#9776;</button>
+        </div>
+        <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+        <nav id="mobileMenu"
+            class="fixed top-0 right-0 z-50 h-full w-64 bg-white transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+            <div class="flex justify-between py-6 m-4">
+                <span class="font-semibold">کوئرا لیست</span>
+                <button id="closeMenu" class="focus:outline-none"><img src="./assets/icons/close.svg"
+                        alt="close"></button>
+            </div>
+            <ul class="flex flex-col p-4 gap-4 space-y-4">
+                <li class="flex items-center gap-4 h-12 px-4 mx-1 bg-[#e2f1ff] border border-none rounded-lg">
+                    <img src="./assets/icons/home.svg" alt="">
+                    <a href="#" class="text-[#007BFF]">خانه</a>
+                </li>
+                <li class="flex items-start gap-4 h-10 px-4 mx-1">
+                    <img src="./assets/icons/tasks.svg" alt="">
+                    <a href="#">تسک‌ها</a>
+                </li>
+                <li class="flex items-start gap-4 h-10 px-4 mx-1">
+                    <img src="./assets/icons/calendar.svg" alt="">
+                    <a href="#">تقویم</a>
+                </li>
+                <li class="flex items-start gap-4 h-10 px-4 mx-1">
+                    <img src="./assets/icons/logs.svg" alt="">
+                    <a href="#">گزارشات</a>
+                </li>
+                <li class="flex items-start gap-4 h-10 px-4 mx-1">
+                    <img src="./assets/icons/setting.svg" alt="">
+                    <a href="#">تنظیمات</a>
+                </li>
+                <li class="flex items-start gap-4 h-10 px-4 mx-1">
+                    <img src="./assets/icons/support.svg" alt="">
+                    <a href="#">پشتیبانی</a>
+                </li>
+                <li class="flex items-start gap-4 h-10 px-4 mx-1">
+                    <img src="./assets/icons/profile.svg" alt="">
+                    <a href="#">پروفایل</a>
+                </li>
+            </ul>
+
+            <div class="flex items-center m-2">
+                <div class="flex items-center cursor-pointer">
+                  <label for="darkModeToggle" class="flex items-center">
+                      <div class="light-icon">
+                        <img src="./assets/icons/sun.svg" alt="Light mode icon" class="w-6 h-6">
+                      </div>
+                    <span class="mx-2 text-sm">روشن</span>
+                  </label>
+                </div>
+
+                <div class="flex items-center cursor-pointer">
+                  <input type="checkbox" id="darkModeToggle" class="hidden">
+                  <label for="darkModeToggle" class="flex items-center">
+                    <div class="dark-icon">
+                      <img src="./assets/icons/moon.svg" alt="Dark mode icon" class="w-6 h-6">
+                    </div>
+                    <span class="mx-2 text-sm">تاریک</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="border-t-2 border-gray-200 my-4 mx-10 md:hidden"></div>
+
+        </nav>
+
+
+          
+    </header>
+    <div class="flex flex-row gap-4 items-center m-10 md:hidden">
+        <div>
+            <img src="./assets/pics/pfp1.png" alt="Profile Picture" class="w-16 h-16 rounded-full">
+        </div>
+        <div class="flex flex-col">
+            <span id="username" class="text-2xl font-bold">سلام</span>
+            <span id="todaysDate" class="font-medium text-slate-500">امروز</span>
+        </div>
+    </div>
+    <div class="border-t-2 border-gray-200 my-4 mx-10 md:hidden"></div>
+    <div id="mainpart" class="flex flex-col gap-12 m-6 md:my-14">
+        <div class="flex flex-col gap-4">
+            <span class="text-2xl font-bold">تسک‌های امروز</span>
+            <span id="todoCount" class="text-sm font-normal text-slate-500">3 تسک را باید انجام دهید.</span>
+        </div>
+        <div id="todo">
+
+        </div>
+        <div class="flex flex-col gap-4">
+            <span class="text-2xl font-bold">تسک‌های انجام‌شده</span>
+            <span id="doneCount" class="text-sm font-normal text-slate-500">3 تسک را انجام داده‌اید.</span>
+        </div>
+        <div class="done">
+
+        </div>
+    </div>
+    <script src="main.js"></script>
 </body>
+
 </html>
