@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quera List</title>
     <link href="./src/output.css" rel="stylesheet">
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @font-face {
             font-family: "yekan";
@@ -106,27 +106,28 @@
         </div>
     </div>
     <div class="border-t-2 border-gray-200 my-4 mx-10 md:hidden"></div>
-
-
     <div id="mainpart" class="flex flex-col gap-12 m-6 md:my-14">
         <div class="flex flex-col gap-4">
             <span class="text-2xl font-bold">تسک‌های امروز</span>
             <span id="todoCount" class="text-sm font-normal text-slate-500">تسکی برای امروز نداری!</span>
         </div>
-        <div id="newtodo" class="outline-4 outline-dashed outline-[#CCC] rounded-3xl">
-            <div class="flex flex-row items-center gap-4 mx-6 p-4">
-                <img src="./assets/icons/add.svg" alt="add">
-                <span class="text-[#007BFF]">افزودن وظیفه جدید</span>
+        <div id="main">
+            <div id="newtodo" class="outline-2 outline-dashed outline-[#CCC] rounded-lg">
+                <div class="flex flex-row items-center gap-4 mx-6 p-4">
+                    <img src="./assets/icons/add.svg" alt="add">
+                    <span class="text-[#007BFF]">افزودن وظیفه جدید</span>
+                </div>
             </div>
-        </div>
-        <div class="flex flex-col gap-12 justify-center items-center opacity-65">
-            <div>
-                <img src="./assets/pics/empty.png" alt="image">
-            </div>
-            <div class="flex flex-col items-center gap-2">
-                <p class="text-[#7D7D7F] font-bold">چه کارهایی امروز برای انجام داری؟</p>
-                <p class="text-sm text-center text-[#AFAEB2]">میتونی الان تسک‌هاتو اینجا بنویسی و برنامه ریزی رو شروع
-                    کنی!</p>
+            <div id="empty" class="flex flex-col gap-12 justify-center items-center opacity-75">
+                <div>
+                    <img src="./assets/pics/empty.png" alt="image">
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <p class="text-[#7D7D7F] font-bold">چه کارهایی امروز برای انجام داری؟</p>
+                    <p class="text-sm text-center text-[#AFAEB2]">میتونی الان تسک‌هاتو اینجا بنویسی و برنامه ریزی رو
+                        شروع
+                        کنی!</p>
+                </div>
             </div>
         </div>
         <div id="todo"></div>
